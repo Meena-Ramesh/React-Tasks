@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import Greet from './components/Greet';
+import GreetPerson from './components/GreetPerson';
+import GreetTeam from './components/GreetTeam'
+import Subscribe from './components/Subscribe';
+import Counter from './components/Counter';
+import TeamDetailsTable from './components/TeamDetailsTable';
 
 function App() {
+  const team = [
+    {
+      empId : 1001,
+      empName : "Sam",
+      location : "Chennai"
+    },
+    {
+      empId : 1002,
+      empName : "Anitha",
+      location : "Chennai"
+    },
+    {
+      empId : 1003,
+      empName : "Priya",
+      location : "Hyderabad"
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greet/>
+      <GreetPerson name = "Clark"/>
+      <GreetTeam/>
+      <Subscribe/>
+      <Counter/>
+      <TeamDetailsTable team = {team}></TeamDetailsTable>
     </div>
   );
 }
